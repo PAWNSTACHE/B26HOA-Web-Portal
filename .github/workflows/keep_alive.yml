@@ -1,30 +1,22 @@
 name: Supabase Ping
 
 on:
-  workflow_dispatch: # Manual trigger
   schedule:
-    - cron: '0 * * * *' # Runs hourly
+    - cron: '*/15 * * * *' # every 15 minutes
 
 jobs:
-  ping:
+  keep-alive:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 20
 
-      - name: Install dependencies
-        run: npm install
+      - run: npm install
 
-      - name: Run Supabase ping
+      - run: node api/keep-alive.js
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
-        run: node node ./api/keep-alive.js
-
-      - name: Ping Netlify Site
-        run: curl -s "https://B26HOA-Web-Portal.netlify.app" > /dev/null
