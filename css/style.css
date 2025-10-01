@@ -1974,6 +1974,15 @@ padding-top: 5.5rem;
     .sidebar.open {
         transform: translateX(0);
     }
+
+    .profile_logo{
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .log{
+        margin-top: 8%;
+    }
     
     nav::before {
         content: '☰';
