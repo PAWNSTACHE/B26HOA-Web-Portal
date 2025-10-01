@@ -6,12 +6,14 @@ const SUPABASE_KEY = process.env.SUPABASE_KEY;
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 (async () => {
-  const { data, error } = await supabase.from('users').select('count(*)');
+  const { count, error } = await supabase
+    .from('users')
+    .select('*', { count: 'exact', head: true });
 
   if (error) {
     console.error('❌ Supabase ping failed:', error.message);
     process.exit(1);
   }
 
-  console.log(`Supabase ping successful. User count: ${data[0].count}`);
+  console.log(`Supabase ping successful. User count: ${count}`);
 })();
