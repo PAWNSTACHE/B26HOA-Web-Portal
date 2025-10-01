@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
-import 'dotenv/config';
+import { SUPABASE_URL, SUPABASE_KEY } from './supabaseConfiguration'
 
-const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
+const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 (async () => {
   const { data, error } = await supabase.from('users').select('count(*)');
