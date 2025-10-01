@@ -24,7 +24,7 @@ jobs:
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
-        run: node node ./api/keep-alive.js
+        run: node ./api/keep-alive.js
 
       - name: Ping Netlify Site
         run: curl -s "https://B26HOA-Web-Portal.netlify.app" > /dev/null
