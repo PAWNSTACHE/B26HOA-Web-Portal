@@ -1,5 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
-import { SUPABASE_URL, SUPABASE_KEY } from './supabaseConfiguration'
+
+const SUPABASE_URL = process.env.SUPABASE_URL;
+const SUPABASE_KEY = process.env.SUPABASE_KEY;
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
@@ -8,8 +10,8 @@ const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
   if (error) {
     console.error('❌ Supabase ping failed:', error.message);
-    process.exit(1); // Fail the GitHub Action
+    process.exit(1);
   }
 
-  console.log(`✅ Supabase ping successful. User count: ${data[0].count}`);
+  console.log(`Supabase ping successful. User count: ${data[0].count}`);
 })();
