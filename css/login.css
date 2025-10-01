@@ -154,7 +154,12 @@ input[type="submit"] {
     height: auto;
 }
 
+.businesslogo {
+    box-shadow: none;
+}
+
 .businesslogo img {
+    box-shadow: none !important;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.4);
     position: absolute;
     bottom: 3.5rem;
@@ -270,10 +275,11 @@ input[type="submit"] {
     }
 
     .businesslogo img {
+        box-shadow: none;
         height: 120px;
         left: 1rem;
         bottom: 1rem;
-        box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+        box-shadow: none !important;
     }
 
     .footer a {
@@ -371,7 +377,7 @@ input[type="submit"] {
     .businesslogo img {
         background: none;
         border-radius: 50%;
-        box-shadow: none;
+        box-shadow: none !important;
     }
 
     .login h3 {
@@ -414,9 +420,9 @@ input[type="submit"] {
     }
 
     .businesslogo img {
+        box-shadow: none !important;
         margin-top: 2rem;
         margin-left: 0%;
         height: 100px;
-        box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
     }
 }
