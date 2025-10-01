@@ -64,7 +64,7 @@ nav .profile a{
 }
 
 .profile_logo {
-    margin-top: 3rem;
+    margin-top: 1rem;
     height: 10rem;
     width: 12.6rem;
     display: flex;
@@ -75,6 +75,7 @@ nav .profile a{
 .profile_logo img {
   max-width: 80%;
   height: auto;
+  margin-bottom: ;
 }
 
 .sidebar a{
@@ -109,6 +110,7 @@ nav .profile a{
 }
 
 .log a {
+    height: 100%;
     display: block;
     width: 100%;
     padding: 0.9rem;
@@ -1818,6 +1820,7 @@ padding-top: 5.5rem;
         font-size: 14px;
     }
     
+    .log
     .chart-box {
         flex: 1 1 48%;
     }
